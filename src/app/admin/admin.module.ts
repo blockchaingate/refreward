@@ -6,13 +6,19 @@ import { AdminComponent } from './admin.component';
 import { ReferralsComponent } from './referrals/referrals.component';
 import { ReferralAddComponent } from './referral-add/referral-add.component';
 import { ReferralEditComponent } from './referral-edit/referral-edit.component';
+import { PlansComponent } from './plans/plans.component';
+import { PlanAddComponent } from './plan-add/plan-add.component';
+import { PlanEditComponent } from './plan-edit/plan-edit.component';
 
 @NgModule({
   declarations: [
     AdminComponent,
     ReferralsComponent,
     ReferralAddComponent,
-    ReferralEditComponent
+    ReferralEditComponent,
+    PlansComponent,
+    PlanAddComponent,
+    PlanEditComponent
   ],
   imports: [
     CommonModule,
