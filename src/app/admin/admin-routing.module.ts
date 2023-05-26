@@ -11,8 +11,9 @@ const routes: Routes = [
         path: '', component: AdminComponent, children: [
             { path: 'dashboard', component: DashboardComponent },
             { path: 'referrals', component: ReferralsComponent },
-            { path: 'referral/:id', component: ReferralEditComponent },
             { path: 'referral/add', component: ReferralAddComponent },
+            { path: 'referral/:id', component: ReferralEditComponent },
+            
             { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
         ]
     }
