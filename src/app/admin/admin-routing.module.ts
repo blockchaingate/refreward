@@ -3,12 +3,16 @@ import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdminComponent } from './admin.component';
 import { ReferralsComponent } from './referrals/referrals.component';
+import { ReferralAddComponent } from './referral-add/referral-add.component';
+import { ReferralEditComponent } from './referral-edit/referral-edit.component';
 
 const routes: Routes = [
     {
         path: '', component: AdminComponent, children: [
             { path: 'dashboard', component: DashboardComponent },
             { path: 'referrals', component: ReferralsComponent },
+            { path: 'referral/:id', component: ReferralEditComponent },
+            { path: 'referral/add', component: ReferralAddComponent },
             { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
         ]
     }

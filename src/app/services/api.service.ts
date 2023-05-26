@@ -116,6 +116,22 @@ export class ApiService {
         return ret;
     }  
  
+    deletePrivate(uri: string) {
+
+        const ret = new Observable<any>((observer) => {
+            this.getOptions().subscribe(options => {
+                this.http.delete<any>(environment.API + uri, options).subscribe(
+                    (ret: any) => {
+                        this.handleResponse(ret, observer);
+                    },
+                    (err: any) => {
+                        observer.error(err.error);
+                    }
+                );
+            });
+        });
+        return ret;
+    }  
 
     postPrivateFormData(uri: string, data: any) {
         const ret = new Observable<any>((observer) => {

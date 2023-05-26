@@ -1,18 +1,34 @@
+<div class="text-end">
+  <a href="/admin/referral/add" type="button" class="btn btn-primary">Add</a>
+</div>
+
 <table class="table">
     <thead>
       <tr>
         <th scope="col">#</th>
         <th scope="col">User</th>
         <th scope="col">Referral</th>
-        <th scope="col">Handle</th>
+        <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
+      <tr *ngFor="let item of referrals; let i = index">
+        <th scope="row">{{i + 1}}</th>
+        <td>{{item.user}}</td>
+        <td>{{item.referral}}</td>
+        <td>
+          <a type="button" class="btn btn-success mx-1" href="/admin/referral/{{item._id}}">Edit</a>
+          <button type="button" class="btn btn-danger mx-1" (click)="delete(item._id)">Delete</button>
+        </td>
       </tr>
     </tbody>
 </table>
+
+<div class="d-flex justify-content-center">
+  <div class="px-2" (click)="prev()">
+      <a type="button" class="btn btn-secondary">Prev</a>
+  </div>
+  <div class="px-2" (click)="next()">
+      <a type="button" class="btn btn-secondary">Next</a>
+  </div>
+</div>

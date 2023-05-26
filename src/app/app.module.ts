@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 
 import { ApiService } from './services/api.service';
 import { UserService } from './services/user.service';
+import { ReferralService } from './services/referral.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,8 @@ import { UserService } from './services/user.service';
   ],
   providers: [
     ApiService,
-    UserService
+    UserService,
+    ReferralService
   ],
   bootstrap: [AppComponent]
 })
